@@ -1,0 +1,463 @@
+
+4_mecanum_wheel_test.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         0000000a  00800100  00000246  000002ba  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000246  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .stab         000006cc  00000000  00000000  000002c4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      00000085  00000000  00000000  00000990  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_aranges 00000020  00000000  00000000  00000a15  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_pubnames 00000039  00000000  00000000  00000a35  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   0000025f  00000000  00000000  00000a6e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000183  00000000  00000000  00000ccd  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   000002f0  00000000  00000000  00000e50  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000030  00000000  00000000  00001140  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    0000012d  00000000  00000000  00001170  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000191  00000000  00000000  0000129d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_pubtypes 00000038  00000000  00000000  0000142e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+   8:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+   c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  10:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  14:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  18:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  1c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  20:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  24:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  28:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  2c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  30:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  34:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  38:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  3c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  40:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  44:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  48:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  4c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  50:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  54:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  58:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  5c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  60:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  64:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  68:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  6c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  70:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  74:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  78:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  7c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  80:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  84:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  88:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	e6 e4       	ldi	r30, 0x46	; 70
+  a0:	f2 e0       	ldi	r31, 0x02	; 2
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	aa 30       	cpi	r26, 0x0A	; 10
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+  b2:	0e 94 65 00 	call	0xca	; 0xca <main>
+  b6:	0c 94 21 01 	jmp	0x242	; 0x242 <_exit>
+
+000000ba <__bad_interrupt>:
+  ba:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000be <display_7segled>:
+unsigned char digit[] = {0x88, 0xBE, 0xC4, 0xA4, 0xB2, 0xA1, 0x83, 0xB8, 0x80, 0xB0}; 		
+														// 7segment display °ª
+
+void display_7segled(unsigned char led[], unsigned int number){
+
+	PORTC = led[number];
+  be:	68 0f       	add	r22, r24
+  c0:	79 1f       	adc	r23, r25
+  c2:	fb 01       	movw	r30, r22
+  c4:	80 81       	ld	r24, Z
+  c6:	85 bb       	out	0x15, r24	; 21
+
+}
+  c8:	08 95       	ret
+
+000000ca <main>:
+
+int main(void)
+{
+  ca:	af 92       	push	r10
+  cc:	bf 92       	push	r11
+  ce:	cf 92       	push	r12
+  d0:	df 92       	push	r13
+  d2:	ef 92       	push	r14
+  d4:	ff 92       	push	r15
+  d6:	0f 93       	push	r16
+  d8:	1f 93       	push	r17
+  da:	cf 93       	push	r28
+  dc:	df 93       	push	r29
+	int number;
+	int before;
+
+	DDRC = 0xFF; 									
+  de:	8f ef       	ldi	r24, 0xFF	; 255
+  e0:	84 bb       	out	0x14, r24	; 20
+	DDRD = 0xFE; 			
+  e2:	9e ef       	ldi	r25, 0xFE	; 254
+  e4:	91 bb       	out	0x11, r25	; 17
+	PORTD = PORTD | 1<<PD0;
+  e6:	90 9a       	sbi	0x12, 0	; 18
+	
+	MOTOR_DDR |= 0xFF;				
+  e8:	97 b3       	in	r25, 0x17	; 23
+  ea:	87 bb       	out	0x17, r24	; 23
+	MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_STOP; 
+  ec:	98 b3       	in	r25, 0x18	; 24
+  ee:	98 b3       	in	r25, 0x18	; 24
+  f0:	88 bb       	out	0x18, r24	; 24
+	number = 0;
+	before = RELEASED; 		// before = 0;
+  f2:	e0 e0       	ldi	r30, 0x00	; 0
+  f4:	f0 e0       	ldi	r31, 0x00	; 0
+	DDRD = 0xFE; 			
+	PORTD = PORTD | 1<<PD0;
+	
+	MOTOR_DDR |= 0xFF;				
+	MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_STOP; 
+	number = 0;
+  f6:	20 e0       	ldi	r18, 0x00	; 0
+  f8:	30 e0       	ldi	r19, 0x00	; 0
+	before = RELEASED; 		// before = 0;
+
+	while(1)
+	{
+		display_7segled(digit, number%10);
+  fa:	ca e0       	ldi	r28, 0x0A	; 10
+  fc:	d0 e0       	ldi	r29, 0x00	; 0
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_BACK_RIGHT;
+		else if(number % 10 == 9)
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_FORE;
+			
+		else
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_STOP;
+  fe:	ff 24       	eor	r15, r15
+ 100:	fa 94       	dec	r15
+		else if(number % 10 == 7)
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_FORE_RIGHT;
+		else if(number % 10 == 8)
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_BACK_RIGHT;
+		else if(number % 10 == 9)
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_FORE;
+ 102:	49 e6       	ldi	r20, 0x69	; 105
+		else if(number % 10 == 6)
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_BACK_LEFT;
+		else if(number % 10 == 7)
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_FORE_RIGHT;
+		else if(number % 10 == 8)
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_BACK_RIGHT;
+ 104:	0e eb       	ldi	r16, 0xBE	; 190
+		else if(number % 10 == 5)
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_FORE_LEFT;
+		else if(number % 10 == 6)
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_BACK_LEFT;
+		else if(number % 10 == 7)
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_FORE_RIGHT;
+ 106:	1b ee       	ldi	r17, 0xEB	; 235
+		else if(number % 10 == 4)
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_RIGHT;
+		else if(number % 10 == 5)
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_FORE_LEFT;
+		else if(number % 10 == 6)
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_BACK_LEFT;
+ 108:	77 ed       	ldi	r23, 0xD7	; 215
+ 10a:	e7 2e       	mov	r14, r23
+		else if(number % 10 == 3)
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_LEFT;
+		else if(number % 10 == 4)
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_RIGHT;
+		else if(number % 10 == 5)
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_FORE_LEFT;
+ 10c:	6d e7       	ldi	r22, 0x7D	; 125
+ 10e:	d6 2e       	mov	r13, r22
+		else if(number % 10 == 2)
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_BACK;
+		else if(number % 10 == 3)
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_LEFT;
+		else if(number % 10 == 4)
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_RIGHT;
+ 110:	5a ea       	ldi	r21, 0xAA	; 170
+ 112:	c5 2e       	mov	r12, r21
+		if(number % 10 == 1)
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_FORE;
+		else if(number % 10 == 2)
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_BACK;
+		else if(number % 10 == 3)
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_LEFT;
+ 114:	95 e5       	ldi	r25, 0x55	; 85
+ 116:	b9 2e       	mov	r11, r25
+		}
+
+		if(number % 10 == 1)
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_FORE;
+		else if(number % 10 == 2)
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_BACK;
+ 118:	86 e9       	ldi	r24, 0x96	; 150
+ 11a:	a8 2e       	mov	r10, r24
+	number = 0;
+	before = RELEASED; 		// before = 0;
+
+	while(1)
+	{
+		display_7segled(digit, number%10);
+ 11c:	c9 01       	movw	r24, r18
+ 11e:	be 01       	movw	r22, r28
+ 120:	0e 94 fa 00 	call	0x1f4	; 0x1f4 <__divmodhi4>
+unsigned char digit[] = {0x88, 0xBE, 0xC4, 0xA4, 0xB2, 0xA1, 0x83, 0xB8, 0x80, 0xB0}; 		
+														// 7segment display °ª
+
+void display_7segled(unsigned char led[], unsigned int number){
+
+	PORTC = led[number];
+ 124:	80 50       	subi	r24, 0x00	; 0
+ 126:	9f 4f       	sbci	r25, 0xFF	; 255
+ 128:	dc 01       	movw	r26, r24
+ 12a:	8c 91       	ld	r24, X
+ 12c:	85 bb       	out	0x15, r24	; 21
+
+	while(1)
+	{
+		display_7segled(digit, number%10);
+		
+		if((before == RELEASED) && !(PIND & 1<<PD0)){ 
+ 12e:	30 97       	sbiw	r30, 0x00	; 0
+ 130:	71 f4       	brne	.+28     	; 0x14e <main+0x84>
+ 132:	80 99       	sbic	0x10, 0	; 16
+ 134:	1c c0       	rjmp	.+56     	; 0x16e <main+0xa4>
+			number++;
+ 136:	2f 5f       	subi	r18, 0xFF	; 255
+ 138:	3f 4f       	sbci	r19, 0xFF	; 255
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 13a:	8f ef       	ldi	r24, 0xFF	; 255
+ 13c:	91 ee       	ldi	r25, 0xE1	; 225
+ 13e:	a4 e0       	ldi	r26, 0x04	; 4
+ 140:	81 50       	subi	r24, 0x01	; 1
+ 142:	90 40       	sbci	r25, 0x00	; 0
+ 144:	a0 40       	sbci	r26, 0x00	; 0
+ 146:	e1 f7       	brne	.-8      	; 0x140 <main+0x76>
+ 148:	00 c0       	rjmp	.+0      	; 0x14a <main+0x80>
+ 14a:	00 00       	nop
+ 14c:	0e c0       	rjmp	.+28     	; 0x16a <main+0xa0>
+			_delay_ms(DEBOUNCE_MS);
+			before = PRESSED;
+		}
+		else if((before == PRESSED) && (PIND & 1<<PD0)){
+ 14e:	80 9b       	sbis	0x10, 0	; 16
+ 150:	0c c0       	rjmp	.+24     	; 0x16a <main+0xa0>
+ 152:	8f ef       	ldi	r24, 0xFF	; 255
+ 154:	91 ee       	ldi	r25, 0xE1	; 225
+ 156:	a4 e0       	ldi	r26, 0x04	; 4
+ 158:	81 50       	subi	r24, 0x01	; 1
+ 15a:	90 40       	sbci	r25, 0x00	; 0
+ 15c:	a0 40       	sbci	r26, 0x00	; 0
+ 15e:	e1 f7       	brne	.-8      	; 0x158 <main+0x8e>
+ 160:	00 c0       	rjmp	.+0      	; 0x162 <main+0x98>
+ 162:	00 00       	nop
+			_delay_ms(DEBOUNCE_MS);
+			before = RELEASED;
+ 164:	e0 e0       	ldi	r30, 0x00	; 0
+ 166:	f0 e0       	ldi	r31, 0x00	; 0
+ 168:	02 c0       	rjmp	.+4      	; 0x16e <main+0xa4>
+		if((before == RELEASED) && !(PIND & 1<<PD0)){ 
+			number++;
+			_delay_ms(DEBOUNCE_MS);
+			before = PRESSED;
+		}
+		else if((before == PRESSED) && (PIND & 1<<PD0)){
+ 16a:	e1 e0       	ldi	r30, 0x01	; 1
+ 16c:	f0 e0       	ldi	r31, 0x00	; 0
+			_delay_ms(DEBOUNCE_MS);
+			before = RELEASED;
+		}
+
+		if(number % 10 == 1)
+ 16e:	c9 01       	movw	r24, r18
+ 170:	be 01       	movw	r22, r28
+ 172:	0e 94 fa 00 	call	0x1f4	; 0x1f4 <__divmodhi4>
+ 176:	81 30       	cpi	r24, 0x01	; 1
+ 178:	91 05       	cpc	r25, r1
+ 17a:	a1 f1       	breq	.+104    	; 0x1e4 <main+0x11a>
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_FORE;
+		else if(number % 10 == 2)
+ 17c:	82 30       	cpi	r24, 0x02	; 2
+ 17e:	91 05       	cpc	r25, r1
+ 180:	21 f4       	brne	.+8      	; 0x18a <main+0xc0>
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_BACK;
+ 182:	88 b3       	in	r24, 0x18	; 24
+ 184:	88 b3       	in	r24, 0x18	; 24
+ 186:	a8 ba       	out	0x18, r10	; 24
+ 188:	c9 cf       	rjmp	.-110    	; 0x11c <main+0x52>
+		else if(number % 10 == 3)
+ 18a:	83 30       	cpi	r24, 0x03	; 3
+ 18c:	91 05       	cpc	r25, r1
+ 18e:	21 f4       	brne	.+8      	; 0x198 <main+0xce>
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_LEFT;
+ 190:	88 b3       	in	r24, 0x18	; 24
+ 192:	88 b3       	in	r24, 0x18	; 24
+ 194:	b8 ba       	out	0x18, r11	; 24
+ 196:	c2 cf       	rjmp	.-124    	; 0x11c <main+0x52>
+		else if(number % 10 == 4)
+ 198:	84 30       	cpi	r24, 0x04	; 4
+ 19a:	91 05       	cpc	r25, r1
+ 19c:	21 f4       	brne	.+8      	; 0x1a6 <main+0xdc>
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_RIGHT;
+ 19e:	88 b3       	in	r24, 0x18	; 24
+ 1a0:	88 b3       	in	r24, 0x18	; 24
+ 1a2:	c8 ba       	out	0x18, r12	; 24
+ 1a4:	bb cf       	rjmp	.-138    	; 0x11c <main+0x52>
+		else if(number % 10 == 5)
+ 1a6:	85 30       	cpi	r24, 0x05	; 5
+ 1a8:	91 05       	cpc	r25, r1
+ 1aa:	21 f4       	brne	.+8      	; 0x1b4 <main+0xea>
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_FORE_LEFT;
+ 1ac:	88 b3       	in	r24, 0x18	; 24
+ 1ae:	88 b3       	in	r24, 0x18	; 24
+ 1b0:	d8 ba       	out	0x18, r13	; 24
+ 1b2:	b4 cf       	rjmp	.-152    	; 0x11c <main+0x52>
+		else if(number % 10 == 6)
+ 1b4:	86 30       	cpi	r24, 0x06	; 6
+ 1b6:	91 05       	cpc	r25, r1
+ 1b8:	21 f4       	brne	.+8      	; 0x1c2 <main+0xf8>
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_BACK_LEFT;
+ 1ba:	88 b3       	in	r24, 0x18	; 24
+ 1bc:	88 b3       	in	r24, 0x18	; 24
+ 1be:	e8 ba       	out	0x18, r14	; 24
+ 1c0:	ad cf       	rjmp	.-166    	; 0x11c <main+0x52>
+		else if(number % 10 == 7)
+ 1c2:	87 30       	cpi	r24, 0x07	; 7
+ 1c4:	91 05       	cpc	r25, r1
+ 1c6:	21 f4       	brne	.+8      	; 0x1d0 <main+0x106>
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_FORE_RIGHT;
+ 1c8:	88 b3       	in	r24, 0x18	; 24
+ 1ca:	88 b3       	in	r24, 0x18	; 24
+ 1cc:	18 bb       	out	0x18, r17	; 24
+ 1ce:	a6 cf       	rjmp	.-180    	; 0x11c <main+0x52>
+		else if(number % 10 == 8)
+ 1d0:	88 30       	cpi	r24, 0x08	; 8
+ 1d2:	91 05       	cpc	r25, r1
+ 1d4:	21 f4       	brne	.+8      	; 0x1de <main+0x114>
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_BACK_RIGHT;
+ 1d6:	88 b3       	in	r24, 0x18	; 24
+ 1d8:	88 b3       	in	r24, 0x18	; 24
+ 1da:	08 bb       	out	0x18, r16	; 24
+ 1dc:	9f cf       	rjmp	.-194    	; 0x11c <main+0x52>
+		else if(number % 10 == 9)
+ 1de:	89 30       	cpi	r24, 0x09	; 9
+ 1e0:	91 05       	cpc	r25, r1
+ 1e2:	21 f4       	brne	.+8      	; 0x1ec <main+0x122>
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_FORE;
+ 1e4:	88 b3       	in	r24, 0x18	; 24
+ 1e6:	88 b3       	in	r24, 0x18	; 24
+ 1e8:	48 bb       	out	0x18, r20	; 24
+ 1ea:	98 cf       	rjmp	.-208    	; 0x11c <main+0x52>
+			
+		else
+			MOTOR_PORT = (MOTOR_PORT & CLEAR) | MOTOR_STOP;
+ 1ec:	88 b3       	in	r24, 0x18	; 24
+ 1ee:	88 b3       	in	r24, 0x18	; 24
+ 1f0:	f8 ba       	out	0x18, r15	; 24
+ 1f2:	94 cf       	rjmp	.-216    	; 0x11c <main+0x52>
+
+000001f4 <__divmodhi4>:
+ 1f4:	97 fb       	bst	r25, 7
+ 1f6:	09 2e       	mov	r0, r25
+ 1f8:	07 26       	eor	r0, r23
+ 1fa:	0a d0       	rcall	.+20     	; 0x210 <__divmodhi4_neg1>
+ 1fc:	77 fd       	sbrc	r23, 7
+ 1fe:	04 d0       	rcall	.+8      	; 0x208 <__divmodhi4_neg2>
+ 200:	0c d0       	rcall	.+24     	; 0x21a <__udivmodhi4>
+ 202:	06 d0       	rcall	.+12     	; 0x210 <__divmodhi4_neg1>
+ 204:	00 20       	and	r0, r0
+ 206:	1a f4       	brpl	.+6      	; 0x20e <__divmodhi4_exit>
+
+00000208 <__divmodhi4_neg2>:
+ 208:	70 95       	com	r23
+ 20a:	61 95       	neg	r22
+ 20c:	7f 4f       	sbci	r23, 0xFF	; 255
+
+0000020e <__divmodhi4_exit>:
+ 20e:	08 95       	ret
+
+00000210 <__divmodhi4_neg1>:
+ 210:	f6 f7       	brtc	.-4      	; 0x20e <__divmodhi4_exit>
+ 212:	90 95       	com	r25
+ 214:	81 95       	neg	r24
+ 216:	9f 4f       	sbci	r25, 0xFF	; 255
+ 218:	08 95       	ret
+
+0000021a <__udivmodhi4>:
+ 21a:	aa 1b       	sub	r26, r26
+ 21c:	bb 1b       	sub	r27, r27
+ 21e:	51 e1       	ldi	r21, 0x11	; 17
+ 220:	07 c0       	rjmp	.+14     	; 0x230 <__udivmodhi4_ep>
+
+00000222 <__udivmodhi4_loop>:
+ 222:	aa 1f       	adc	r26, r26
+ 224:	bb 1f       	adc	r27, r27
+ 226:	a6 17       	cp	r26, r22
+ 228:	b7 07       	cpc	r27, r23
+ 22a:	10 f0       	brcs	.+4      	; 0x230 <__udivmodhi4_ep>
+ 22c:	a6 1b       	sub	r26, r22
+ 22e:	b7 0b       	sbc	r27, r23
+
+00000230 <__udivmodhi4_ep>:
+ 230:	88 1f       	adc	r24, r24
+ 232:	99 1f       	adc	r25, r25
+ 234:	5a 95       	dec	r21
+ 236:	a9 f7       	brne	.-22     	; 0x222 <__udivmodhi4_loop>
+ 238:	80 95       	com	r24
+ 23a:	90 95       	com	r25
+ 23c:	bc 01       	movw	r22, r24
+ 23e:	cd 01       	movw	r24, r26
+ 240:	08 95       	ret
+
+00000242 <_exit>:
+ 242:	f8 94       	cli
+
+00000244 <__stop_program>:
+ 244:	ff cf       	rjmp	.-2      	; 0x244 <__stop_program>
