@@ -11,5 +11,7 @@ int main()
     printf("sizeof(a)=%lu\n", sizeof(a));
     printf("sizeof(int[4])=%lu\n", sizeof(int[4]));
 
+    printf("sizeof(&a)=%lu\n", sizeof(&a));
+
     return 0;
 }
